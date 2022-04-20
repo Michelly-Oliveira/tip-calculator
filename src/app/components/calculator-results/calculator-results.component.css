@@ -1,0 +1,45 @@
+.results-section {
+  max-width: 500px;
+}
+
+.result-info {
+  margin: 1rem 0 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-info p {
+  color: #fff;
+}
+
+.result-info p span {
+  color: var(--dark-grayish-cyan);
+  font-size: 1.4rem;
+}
+
+.result-info .result {
+  color: var(--primary-cyan);
+  font-size: 3rem;
+}
+
+.reset-btn {
+  background-color: var(--primary-cyan);
+  color: var(--very-dark-cyan);
+  font-size: 2rem;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 0.5rem;
+
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1.5rem;
+
+  transition: 0.1s ease-in background-color;
+}
+
+.reset-btn:hover {
+  background-color: var(--light-grayish-cyan);
+}

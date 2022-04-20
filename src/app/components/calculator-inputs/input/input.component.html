@@ -1,0 +1,18 @@
+<fieldset class="form-section">
+  <div class="input-title">
+    <legend>{{ title }}</legend>
+    <span *ngIf="hasError">Can't be zero</span>
+  </div>
+
+  <div class="input-container {{ hasError && 'error' }}">
+    <img src="{{ icon }}" alt="{{ icon }}" />
+    <input
+      type="number"
+      name="{{ info }}"
+      id="{{ info }}"
+      placeholder="0"
+      [(ngModel)]="value"
+      (blur)="updateInputValue()"
+    />
+  </div>
+</fieldset>

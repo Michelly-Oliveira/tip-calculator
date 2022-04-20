@@ -1,0 +1,17 @@
+<form>
+  <app-input
+    (onInputChange)="changeInputValue($event)"
+    title="Bill"
+    info="bill"
+    iconName="money"
+  ></app-input>
+
+  <app-choose-tip></app-choose-tip>
+
+  <app-input
+    (onInputChange)="changeInputValue($event)"
+    title="Number of People"
+    info="people"
+    iconName="people"
+  ></app-input>
+</form>

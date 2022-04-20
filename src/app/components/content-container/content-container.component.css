@@ -1,0 +1,20 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fff;
+  border-radius: 1.5rem 1.5rem 0 0;
+
+  min-width: 375px;
+}
+
+.content-section {
+  border-radius: 1.3rem;
+  margin: 2.5rem 2.5rem 1rem;
+}
+
+.dark-content-bg {
+  margin: 0 2.5rem 2.5rem;
+  background-color: var(--very-dark-cyan);
+  padding: 2.3rem;
+}
