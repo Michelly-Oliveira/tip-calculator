@@ -56,7 +56,19 @@
   padding: 0 2rem;
 }
 
-.tip-section .select-tip:focus-within,
 .tip-section .custom-tip:focus-within {
   border: 3px solid var(--primary-cyan);
+}
+
+@media (min-width: 1440px) {
+  .tip-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  .form-section {
+    border: none;
+    margin: 4rem 0;
+  }
 }

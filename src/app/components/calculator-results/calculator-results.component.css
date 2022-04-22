@@ -43,3 +43,19 @@
 .reset-btn:hover {
   background-color: var(--light-grayish-cyan);
 }
+
+@media (min-width: 1440px) {
+  .results-section {
+    padding: 2rem;
+  }
+
+  .result-info .result {
+    color: var(--primary-cyan);
+    font-size: 4rem;
+  }
+
+  .reset-btn {
+    margin-top: 10rem;
+    padding: 1.5rem;
+  }
+}

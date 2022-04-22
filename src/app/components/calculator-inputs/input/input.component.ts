@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { TipService } from '../../../services/tip.service';
 
 @Component({
   selector: 'app-input',
@@ -13,9 +16,17 @@ export class InputComponent implements OnInit {
 
   icon!: string;
   hasError: boolean = false;
-  value!: number;
+  value!: number | undefined;
 
-  constructor() {}
+  subscription!: Subscription;
+
+  constructor(private tipService: TipService) {
+    this.subscription = this.tipService.getValues().subscribe((values) => {
+      if (!values[this.info]) {
+        this.value = undefined;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.icon =
@@ -31,8 +42,7 @@ export class InputComponent implements OnInit {
     }
 
     this.onInputChange.emit({
-      name: this.info,
-      value: this.value,
+      [this.info]: this.value,
     });
 
     this.hasError = false;

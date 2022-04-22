@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 
-import { TipService } from '../../services/tip.service';
+import { TipInfo, TipService } from '../../services/tip.service';
 
 @Component({
   selector: 'app-calculator-inputs',
@@ -9,17 +8,19 @@ import { TipService } from '../../services/tip.service';
   styleUrls: ['./calculator-inputs.component.css'],
 })
 export class CalculatorInputsComponent implements OnInit {
-  subscription!: Subscription;
-
-  constructor(private tipService: TipService) {
-    this.subscription = this.tipService.getValues().subscribe();
-  }
+  constructor(private tipService: TipService) {}
 
   ngOnInit(): void {}
 
-  changeInputValue(values: any): void {
-    console.log('here', values);
-    const { name, value } = values;
-    this.tipService.update(name, value);
+  changeInputValue(values: TipInfo): void {
+    this.tipService.update(values);
+  }
+
+  changeTipPercentage(value: number): void {
+    this.tipService.update({ tipPercentage: value });
+  }
+
+  calculateTip() {
+    this.tipService.calculateTip();
   }
 }

@@ -4,7 +4,7 @@
       Tip Amount <br />
       <span>/ person</span>
     </p>
-    <p class="result">$0.00</p>
+    <p class="result">{{ tip }}</p>
   </div>
 
   <div class="result-info">
@@ -12,8 +12,8 @@
       Total <br />
       <span>/ person</span>
     </p>
-    <p class="result">$0.00</p>
+    <p class="result">{{ total }}</p>
   </div>
 
-  <button type="reset" class="reset-btn">Reset</button>
+  <button (click)="onReset()" class="reset-btn">Reset</button>
 </div>

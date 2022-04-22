@@ -6,7 +6,9 @@
     iconName="money"
   ></app-input>
 
-  <app-choose-tip></app-choose-tip>
+  <app-choose-tip
+    (onChangeTipValue)="changeTipPercentage($event)"
+  ></app-choose-tip>
 
   <app-input
     (onInputChange)="changeInputValue($event)"
